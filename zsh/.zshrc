@@ -19,8 +19,12 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
+
+# Path
 export PATH=$PATH:/usr/local/go/bin
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# Command
 export EDITOR="nvim"
 
 # Alias
@@ -28,6 +32,7 @@ export EDITOR="nvim"
 alias vim="nvim"
 alias code="code-oss"
 alias mux="tmuxinator"
+alias lg="lazygit"
 
 source $ZSH/oh-my-zsh.sh
 
