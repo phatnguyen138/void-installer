@@ -142,7 +142,7 @@
     "on-click": "ghostty -e htop"
   },
   "memory": {
-    "format": " {: >3}%",
+    "format": " {: >3}%",
     "on-click": "ghostty -e htop"
   },
   "temperature": {
@@ -166,12 +166,11 @@
             "transition-duration": 300,
             "children-class": "not-memory",
             "transition-left-to-right": false
-        },        
+        },
         "modules": [
             "custom/system",
             "disk",
-            "cpu",
-            "memory"
+            "cpu"
             // "backlight",
             //"sway/language"
         ]
@@ -194,9 +193,9 @@
       "critical": 15
     },
     "format": "{icon} {capacity: >3}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
+    "format-charging": "{icon}  {capacity}%",
+    "format-plugged": "{icon}  {capacity}%",
+    "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -219,7 +218,7 @@
     // "scroll-step": 5,
     "format": "{icon} {volume: >3}%",
     "format-bluetooth": "{icon} {volume: >3}%",
-    "format-muted": " muted",
+    "format-muted": " muted",
     "format-icons": {
       "headphones": "",
       "handsfree": "",

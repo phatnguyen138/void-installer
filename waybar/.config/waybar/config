@@ -22,10 +22,10 @@
   "modules-right": [
     "backlight",
     "pulseaudio",
+    "memory",
     "custom/keyboard-layout",
     "temperature",
     // "cpu",
-    // "memory",
     // "disk",
     "group/hardware",
     "battery",
