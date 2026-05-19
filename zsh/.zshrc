@@ -36,19 +36,11 @@ alias lg="lazygit"
 
 source $ZSH/oh-my-zsh.sh
 
-# Sway setup
-mkdir -p /tmp/swaytmp
-export XDG_RUNTIME_DIR="/tmp/swaytmp"
-
-if [ "$(tty)" = "/dev/tty1" ]; then
-  exec dbus-run-session sway
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # opencode
-export PATH=/home/phatvoid/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # Zoxide
 eval "$(zoxide init zsh)"

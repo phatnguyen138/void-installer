@@ -180,6 +180,14 @@ input type:keyboard {
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 #
+# Clipboard
+#
+    bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -p "Clipboard" -display-columns 2 | cliphist decode | wl-copy
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+    bindsym $mod+Control+s exec grim -g "$(slurp)" $HOME/screenshorts/$(date +'%Y-%m-%d-%H%M%S_screenshot.png')
+
+    bindsym $mod+Print exec grim - | wl-copy
+#
 # Resizing containers:
 #
 mode "resize" {
@@ -202,10 +210,10 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 
-    # Volume control
-    bindsym XF86AudioRaiseVolume exec pamixer -i 5
-    bindsym XF86AudioLowerVolume exec pamixer -d 5
-    bindsym XF86AudioMute exec pamixer -t
+    # Volume control (unified to pactl)
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 bindsym $mod+r mode "resize"
 #
@@ -242,8 +250,17 @@ exec swayidle -w \
      timeout 600 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
      before-sleep 'swaylock -c 000000'
-# exec pipewire
-exec_always ~/.config/sway/scripts/start-audio.sh
-exec nm-applet --indicator
+
+# Start pipewire once (avoid restart on reload)
+exec ~/.config/sway/scripts/start-audio.sh
+
+# nm-applet: guard against duplicates on reload
+exec_always pgrep -x nm-applet > /dev/null || nm-applet --indicator
+
 exec fcitx5 -d
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+# Set brightness once on startup
+exec brightnessctl set 80%
 include /etc/sway/config.d/*

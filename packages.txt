@@ -1,0 +1,148 @@
+# ============================================
+# Void Linux Desktop Bootstrap — Package List
+# ============================================
+
+# REPOS
+# ============================================
+# Enable nonfree repository for restricted packages
+void-repo-nonfree
+
+# PACKAGES
+# ============================================
+
+# Base system
+base-system
+base-devel
+sudo
+
+# GPU & Display
+mesa
+mesa-dri
+linux-firmware-amd
+linux-firmware-intel
+linux-firmware-network
+
+# Wayland / Sway WM
+sway
+swaybg
+swayidle
+swaylock
+waybar
+wl-clipboard
+wlroots0.19
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+xdg-utils
+
+# Terminal
+alacritty
+alacritty-terminfo
+kitty
+tmux
+zsh
+
+# Input
+fcitx5
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-qt
+fcitx5-qt6
+fcitx5-unikey
+
+# Audio
+alsa-firmware
+alsa-lib
+alsa-ucm-conf
+alsa-utils
+pamixer
+pipewire
+wireplumber
+pulseaudio-utils
+
+# Networking
+NetworkManager
+network-manager-applet
+openssh
+dhcpcd
+iw
+wpa_supplicant
+
+# Fonts
+nerd-fonts
+nerd-fonts-otf
+nerd-fonts-symbols-ttf
+nerd-fonts-ttf
+font-awesome
+cantarell-fonts
+dejavu-fonts-ttf
+ttf-opensans
+
+# Theming
+arc-theme
+adwaita-icon-theme
+gnome-themes-extra
+gtk-engine-murrine
+nwg-look
+
+# Screenshot / Clipboard
+grim
+slurp
+cliphist
+
+# Power
+brightnessctl
+upower
+
+# Session / Login
+greetd
+tuigreet
+elogind
+seatd
+dbus
+dbus-elogind
+polkit
+polkit-elogind
+
+# Development
+git
+neovim
+fzf
+ripgrep
+fd
+zoxide
+lazygit
+tree
+stow
+
+# File manager
+thunar
+
+# Misc utilities
+wget
+curl
+which
+man-pages
+unzip
+xset
+xkeyboard-config
+
+# Docker
+docker
+docker-cli
+docker-compose
+containerd
+
+# ============================================
+# SERVICES (runit)
+# ============================================
+# Enable these services after package installation:
+#   sudo ln -sf /etc/sv/<service> /var/service/
+#
+# NetworkManager
+# dbus
+# elogind
+# seatd
+# greetd
+# docker
+# polkitd

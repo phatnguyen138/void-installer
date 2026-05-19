@@ -1,3 +1,52 @@
-# Tmux plugins (managed by TPM)
+# Vim swap files
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# TPM plugins (managed by TPM, not git)
 tmux/.tmux/plugins/
 
+# Generated fcitx5 caches
+fcitx5/.config/fcitx5/conf/cached_layouts
+
+# Logs and temp files
+*.log
+*.tmp
+*.pid
+
+# AI assistant caches
+.opencode/
+.claude/
+.gemini/
+.copilot/
+
+# IDE directories
+.idea/
+.vscode/
+*.code-workspace
+
+# Build artifacts
+build/
+dist/
+node_modules/
+
+# Test artifacts
+tests/run_tests_in_isolation
+tests/helpers/helpers.sh
+
+# Vagrant
+**/.vagrant/
+
+# Custom scripts (except examples)
+custom
+!custom/README.md
+!custom/example.sh
+
+# Doc tags
+doc/tags
+
+# oh-my-zsh custom (installed via script, not tracked)
+# NOTE: These live in ~/.oh-my-zsh, not in this repo

@@ -1,11 +1,16 @@
 #!/bin/bash
-killall -q pipewire wireplumber pipewire-pulse
+# Start pipewire audio stack if not already running
 
-pipewire &
+if ! pgrep -x pipewire > /dev/null; then
+    pipewire &
+    sleep 1
+fi
 
-sleep 1
+if ! pgrep -x pipewire-pulse > /dev/null; then
+    pipewire-pulse &
+    sleep 1
+fi
 
-pipewire-pulse &
-sleep 1
-
-wireplumber &
+if ! pgrep -x wireplumber > /dev/null; then
+    wireplumber &
+fi

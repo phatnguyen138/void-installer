@@ -1,4 +1,4 @@
-# /home/phatvoid/.config/tmuxinator/work.yml
+# ~/.config/tmuxinator/work.yml
 
 name: work
 root: ~/

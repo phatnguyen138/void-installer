@@ -139,11 +139,11 @@
   },
   "cpu": {
     "format": " {usage: >3}%",
-    "on-click": "ghostty -e htop"
+    "on-click": "alacritty -e htop"
   },
   "memory": {
     "format": " {: >3}%",
-    "on-click": "ghostty -e htop"
+    "on-click": "alacritty -e htop"
   },
   "temperature": {
     "thermal-zone": 4,
@@ -157,7 +157,7 @@
     // "interval": 30,
     "format": " {percentage_used}% ",
     "path": "/",
-    //"on-click": "ghostty -e htop"
+    //"on-click": "alacritty -e htop"
   }, 
     // Group Hardware
     "group/hardware": {
@@ -239,7 +239,7 @@
     "interval": 7200, // every two hours
     "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
     "exec-if": "exit 0", // always run; consider advanced run conditions
-    "on-click": "ghostty -e sudo pacman -Syu", // update system
+    "on-click": "alacritty -e sudo pacman -Syu", // update system
     "signal": 8
   },
   "custom/power": {
