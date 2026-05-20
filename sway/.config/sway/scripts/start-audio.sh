@@ -1,16 +1,16 @@
 #!/bin/bash
 # Start pipewire audio stack if not already running
 
-if ! pgrep -x pipewire > /dev/null; then
-    pipewire &
-    sleep 1
-fi
+# kill all running pipewire instances
+killall pipewire
+killall pipewire-pulse
+killall wireplumber
 
-if ! pgrep -x pipewire-pulse > /dev/null; then
-    pipewire-pulse &
-    sleep 1
-fi
+# start pipewire
+pipewire &
 
-if ! pgrep -x wireplumber > /dev/null; then
-    wireplumber &
-fi
+# start pipewire-pulse
+pipewire-pulse &
+
+# start wireplumber
+wireplumber &

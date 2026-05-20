@@ -251,11 +251,8 @@ exec swayidle -w \
      resume 'swaymsg "output * dpms on"' \
      before-sleep 'swaylock -c 000000'
 
-# Start pipewire once (avoid restart on reload)
-exec ~/.config/sway/scripts/start-audio.sh
-
-# nm-applet: guard against duplicates on reload
-exec_always pgrep -x nm-applet > /dev/null || nm-applet --indicator
+exec_always ~/.config/sway/scripts/start-audio.sh
+exec nm-applet --indicator
 
 exec fcitx5 -d
 exec wl-paste --type text --watch cliphist store

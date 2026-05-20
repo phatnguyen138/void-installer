@@ -156,7 +156,7 @@
   "disk": {
     // "interval": 30,
     "format": " {percentage_used}% ",
-    "path": "/",
+    "path": "/"
     //"on-click": "alacritty -e htop"
   }, 
     // Group Hardware

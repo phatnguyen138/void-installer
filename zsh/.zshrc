@@ -39,6 +39,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Sway setup
+export XDG_RUNTIME_DIR="/tmp/swaytmp"
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 700 "$XDG_RUNTIME_DIR"
+
+if [ "$(tty)" = "/dev/tty1" ]; then
+  exec dbus-run-session sway
+fi
+
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
 
