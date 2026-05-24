@@ -1,0 +1,9 @@
+{
+  "skills": [
+    {
+      "name": "post-task-cleanup",
+      "description": "Mandatory cleanup workflow after completing tasks: check git status, remove temporary artifacts (.omo/), commit changes",
+      "file": ".opencode/skills/post-task-cleanup.md"
+    }
+  ]
+}

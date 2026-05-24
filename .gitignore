@@ -17,8 +17,10 @@ fcitx5/.config/fcitx5/conf/cached_layouts
 *.tmp
 *.pid
 
-# AI assistant caches
-.opencode/
+# AI assistant caches (keep skills config)
+.opencode/*
+!.opencode/skills/
+!.opencode/skills.json
 .claude/
 .gemini/
 .copilot/
