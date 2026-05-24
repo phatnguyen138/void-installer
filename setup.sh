@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 # ============================================
 # Void Linux Desktop Bootstrap
@@ -42,7 +42,7 @@ phase1_system() {
     # Install packages from packages.txt
     if [ -f "$DOTFILES_DIR/packages.txt" ]; then
         local pkgs
-        pkgs=$(grep -v '^#' "$DOTFILES_DIR/packages.txt" | grep -v '^$' | grep -v '^# SERVICES' | sed '/^# /,$d' | tr '\n' ' ')
+        pkgs=$(grep -v '^#' "$DOTFILES_DIR/packages.txt" | grep -v '^$' | tr '\n' ' ')
         dry_run_echo "sudo xbps-install -Sy $pkgs"
     fi
 
@@ -122,7 +122,7 @@ phase3_dotfiles() {
     local packages=(
         "zsh" "bash" "sway" "tmux" "alacritty" "kitty"
         "waybar" "rofi" "fcitx5" "neovim" "gtk"
-        "nwg-look" "greetd" "lazygit" "xsettingsd"
+        "nwg-look" "greetd" "lazygit" "xsettingsd" "pipewire"
     )
 
     for pkg in "${packages[@]}"; do
@@ -147,7 +147,7 @@ phase4_postinstall() {
     log_info "=== Phase 4: Post-Install ==="
 
     # Create directories
-    dry_run_echo "mkdir -p $HOME/screenshorts $HOME/Projects $HOME/Downloads"
+    dry_run_echo "mkdir -p $HOME/screenshots $HOME/Projects $HOME/Downloads"
 
     # Install neovim plugins
     if command -v nvim &> /dev/null; then

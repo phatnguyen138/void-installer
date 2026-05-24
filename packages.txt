@@ -58,7 +58,9 @@ alsa-utils
 pamixer
 pipewire
 wireplumber
+pipewire-pulse
 pulseaudio-utils
+pavucontrol
 
 # Networking
 NetworkManager
@@ -113,7 +115,9 @@ fd
 zoxide
 lazygit
 tree
+bc
 stow
+htop
 
 # File manager
 thunar
@@ -124,7 +128,6 @@ curl
 which
 man-pages
 unzip
-xset
 xkeyboard-config
 
 # Docker

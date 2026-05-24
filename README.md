@@ -50,7 +50,7 @@ To run only a specific phase:
 
 ## What's Installed
 
-### System Packages (~95 packages)
+### System Packages (~97 packages)
 
 See [`packages.txt`](packages.txt) for the full list. Key categories:
 

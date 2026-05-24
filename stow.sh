@@ -7,7 +7,7 @@ cd "$DOTFILES_DIR"
 PACKAGES=(
     zsh bash sway tmux alacritty kitty
     waybar rofi fcitx5 neovim gtk
-    nwg-look greetd lazygit xsettingsd
+    nwg-look greetd lazygit xsettingsd pipewire
 )
 
 echo "Restowing dotfiles packages..."

@@ -184,7 +184,7 @@ input type:keyboard {
 #
     bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -p "Clipboard" -display-columns 2 | cliphist decode | wl-copy
     bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
-    bindsym $mod+Control+s exec grim -g "$(slurp)" $HOME/screenshorts/$(date +'%Y-%m-%d-%H%M%S_screenshot.png')
+    bindsym $mod+Control+s exec grim -g "$(slurp)" $HOME/screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png')
 
     bindsym $mod+Print exec grim - | wl-copy
 #
