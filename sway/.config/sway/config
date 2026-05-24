@@ -209,11 +209,6 @@ mode "resize" {
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
-
-    # Volume control (unified to pactl)
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 bindsym $mod+r mode "resize"
 #
@@ -251,7 +246,7 @@ exec swayidle -w \
      resume 'swaymsg "output * dpms on"' \
      before-sleep 'swaylock -c 000000'
 
-exec_always ~/.config/sway/scripts/start-audio.sh
+exec pipewire
 exec nm-applet --indicator
 
 exec fcitx5 -d
